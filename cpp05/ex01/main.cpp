@@ -6,11 +6,12 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 21:14:28 by esilva-s          #+#    #+#             */
-/*   Updated: 2023/08/11 00:09:42 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2023/08/13 01:41:34 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 void    primeiro_teste(void)
 {
@@ -42,7 +43,7 @@ void    primeiro_teste(void)
 void    segundo_teste(void)
 {
     std::cout << "\n======= Segundo Teste ========\n";
-// -9 de core dumped
+
 Bureaucrat obj("Beltrano", -20);
     try{
 		
@@ -77,9 +78,9 @@ void    quarto_teste(void)
 {
     std::cout << "\n====== Quarto Teste ========\n";
 
-    Bureaucrat obj("Ciclano", 100);
-    Bureaucrat obj2(obj);
-    Bureaucrat obj3("Deltano", 44);
+    Form  obj("Ciclano", 100, 9);
+    Form  obj2(obj);
+    Form obj3("Deltano", 44, 20);
 
     obj3 = obj;
 
@@ -88,11 +89,32 @@ void    quarto_teste(void)
     std::cout << "obj3: " << obj3 << std::endl;
 }
 
+void    quinto_teste(void)
+{
+    std::cout << "\n====== Quinto Teste ========\n";
+	 Bureaucrat obj1("42SP", 35) ;
+	
+	
+    Form  obj("Ciclano", 3, 96);
+
+    Form  obj3("Ciclana", 8, 36);
+
+ 	std::cout << obj << std::endl;
+	obj.beSigned (obj1);
+	std::cout << obj << std::endl;
+	std::cout << obj3 << std::endl;
+	obj1.signForm(obj3);
+	std::cout << obj3 << std::endl;
+	obj1.signForm(obj3);
+
+}
+
 int main()
 {
-    primeiro_teste();
+   // primeiro_teste();
    // segundo_teste();
-    terceiro_teste();
-    quarto_teste();
+   // terceiro_teste();
+  //  quarto_teste();
+  quinto_teste();
     return(0);
 }
