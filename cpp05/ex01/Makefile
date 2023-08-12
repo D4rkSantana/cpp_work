@@ -6,7 +6,7 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 21:13:33 by esilva-s          #+#    #+#              #
-#    Updated: 2023/08/11 00:19:26 by ryoshio-         ###   ########.fr        #
+#    Updated: 2023/08/12 23:46:04 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME = Bureaucrat
 CC = c++
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-INCLUDES = Bureaucrat.hpp
-SRC = main.cpp Bureaucrat.cpp
+INCLUDES = Bureaucrat.hpp Form.hpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBG = $(SRC:.cpp=.o)
 
 
