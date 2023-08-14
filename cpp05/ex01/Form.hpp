@@ -21,7 +21,7 @@ class Form {
 
 	public:
 		Form();
-		Form(const std::string name, int gradeExec, int gradeSigned);
+		Form(const std::string name, int gradeSigned, int gradeExec);
 		Form(const	Form& temp);
 		Form& operator=(const	Form& temp);
 		~Form();

@@ -6,7 +6,7 @@ Form::Form() : _name("Frank"), _gradeExec(150), _gradeSigned(100)
 	this->_signed = false;
 }
 
-Form::Form(const std::string name, int gradeExec, int gradeSigned) : _name(name), _gradeExec(gradeExec), _gradeSigned(gradeSigned)
+Form::Form(const std::string name, int gradeSigned, int gradeExec) : _name(name), _gradeExec(gradeExec), _gradeSigned(gradeSigned)
 {
 	
     if (gradeExec < 1 || gradeSigned < 1)

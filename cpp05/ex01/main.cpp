@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 21:14:28 by esilva-s          #+#    #+#             */
-/*   Updated: 2023/08/14 18:56:31 by esilva-s         ###   ########.fr       */
+/*   Updated: 2023/08/14 19:52:22 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ void    quinto_teste(void)
 	 Bureaucrat obj1("42SP", 35) ;
 	
 	
-    Form  obj("Ciclano", 3, 96);
+    Form  obj("Ciclano", 96, 3);
 
-    Form  obj3("Ciclana", 8, 36);
+    Form  obj3("Ciclana", 36, 8);
 
  	std::cout << obj << std::endl;
 	obj.beSigned (obj1);
