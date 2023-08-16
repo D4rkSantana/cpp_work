@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ryoshio- <ryoshio-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 21:14:28 by esilva-s          #+#    #+#             */
-/*   Updated: 2023/08/14 21:21:46 by esilva-s         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:12:07 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 void    primeiro_teste(void)
 {
@@ -83,11 +84,24 @@ void    quarto_teste(void)
     obj.execute(bur);
 }
 
+
+void    quinto_teste(void)
+{
+    std::cout << "\n====== Quinto Teste ========\n";
+
+    Bureaucrat bur("jose", 1);
+    RobotomyRequestForm obj("teste");
+
+    bur.signForm(obj);
+    obj.execute(bur);
+}
+
 int main()
 {
    // primeiro_teste();
    // segundo_teste();
    // terceiro_teste();
-   quarto_teste();
+   // quarto_teste();
+   quinto_teste();
     return(0);
 }
