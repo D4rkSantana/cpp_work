@@ -7,13 +7,13 @@
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137)
 {
     this->_target = "default";
-    std::cout << "Shrubbery Creation Form Default was created" << std::endl;
+    std::cout << "ShrubberyCreationForm Creation Form Default was created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137)
 {
     this->_target = target;
-    std::cout << "Shrubbery Creation Form was created" << std::endl;    
+    std::cout << "ShrubberyCreationForm Creation Form was created" << std::endl;    
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ) : AForm("ShrubberyCreationForm", 145, 137)

@@ -3,13 +3,13 @@
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45)
 {
     this->_target = "default";
-    std::cout << "Shrubbery Creation Form Default was created" << std::endl;
+    std::cout << "RobotomyRequestForm Creation Form Default was created" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45)
 {
     this->_target = target;
-    std::cout << "Shrubbery Creation Form was created" << std::endl;    
+    std::cout << "RobotomyRequestForm Creation Form was created" << std::endl;    
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : AForm("RobotomyRequestForm", 72, 45)

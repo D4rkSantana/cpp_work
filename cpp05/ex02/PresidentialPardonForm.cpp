@@ -4,19 +4,19 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5)
 {
     this->_target = "default";
-    std::cout << "Shrubbery Creation Form Default was created" << std::endl;
+    std::cout << "PresidentialPardonForm Creation Form Default was created" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5)
 {
     this->_target = target;
-    std::cout << "Shrubbery Creation Form was created" << std::endl;    
+    std::cout << "PresidentialPardonForm Creation Form was created" << std::endl;    
 }
 
-PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) : AForm("PresidentialPardonForm", 72, 45)
+PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) : AForm("PresidentialPardonForm", 25, 5)
 {
     this->_target = src.getTarget();
     std::cout << "PresidentialPardonForm was copied" << std::endl;
@@ -56,12 +56,7 @@ std::ostream &operator<<(std::ostream & o, PresidentialPardonForm const & ref)
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     this->checkExecute(executor);
-	std::cout << "Drilling noises..." << std::endl;
-	if(rand() % 2)
-		std::cout <<  this->getTarget() <<" has been robotomized successfully " << std::endl;
-	else 
-		std::cout <<  this->getTarget() <<" fail to be robotized" << std::endl;
-                                  
+    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;                            
 }
 
 
