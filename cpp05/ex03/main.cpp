@@ -6,76 +6,52 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 21:14:28 by esilva-s          #+#    #+#             */
-/*   Updated: 2023/08/18 20:55:45 by esilva-s         ###   ########.fr       */
+/*   Updated: 2023/08/20 20:10:00 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Intern.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-void    teste_nao_funcional(AForm &form)
-{
-    std::cout << "---" << std::endl;
-    Bureaucrat bur("Leon", 150);
-    std::cout << "---" << std::endl;
-
-    std::cout << "- execução:" << std::endl;
-    bur.executeForm(form);
-    std::cout << "---" << std::endl;
-
-    std::cout << "- fim:" << std::endl;
-}
-
-void    teste_funcional(AForm &form)
-{
-    std::cout << "---" << std::endl;
-    Bureaucrat bur("Frank", 1);
-    std::cout << "---" << std::endl;
-
-    std::cout << "- assinatura:" << std::endl;
-    bur.signForm(form);
-    std::cout << "---" << std::endl;
-
-    std::cout << "- execução:" << std::endl;
-    bur.executeForm(form);
-    std::cout << "---" << std::endl;
-
-    std::cout << "- fim:" << std::endl;
-}
-
 int main()
 {
-    std::cout << "===== Inicio " << std::endl;
+    std::cout << "=== Criando Funcionarios" << std::endl;
+    Bureaucrat bur("frank", 1);
+    std::cout << std::endl;
+    Intern random;
+    std::cout << std::endl;
+
+    std::cout << "=== Criando Formularios" << std::endl;
+    AForm *form;
+    AForm *form2;
+    form = random.makeForm("RobotomyRequestForm", "Afonso");
+    std::cout << std::endl;
     
-    std::cout << "===== Teste Shrubbery "<< std::endl;
-    ShrubberyCreationForm form1("Tree");
-    teste_funcional(form1);
+    try{
+        form2 = random.makeForm("WrongForm", "wrong");
+    }
+    catch (std::exception &e)
+    {
+        form2 = NULL;
+        std::cout << "Form not create because: " << e.what() << std::endl;
+    }
     std::cout << std::endl;
 
-    std::cout << "===== Teste Shrubbery Error "<< std::endl;
-    teste_nao_funcional(form1);
+    std::cout << "=== Assinando" << std::endl;
+    bur.signForm(*form);
     std::cout << std::endl;
+    std::cout << "=== Executando" << std::endl;
+    bur.executeForm(*form);
+    std::cout << std::endl;
+
+    std::cout << "=== Delete" << std::endl;
+    delete form;
     
-    std::cout << "===== Teste Robotomy "<< std::endl;
-    RobotomyRequestForm form2("Rick");
-    teste_funcional(form2);
-    std::cout << std::endl;
-
-    std::cout << "===== Teste Robotomy Erro"<< std::endl;
-    teste_nao_funcional(form2);
-    std::cout << std::endl;
-
-    std::cout << "===== Teste PresidentialPardon "<< std::endl;
-    PresidentialPardonForm form3("Vick");
-    teste_funcional(form3);
-    std::cout << std::endl;
-
-    std::cout << "===== Teste PresidentialPardon Erro"<< std::endl;
-    teste_nao_funcional(form3);
-    std::cout << std::endl;
-
+    if (form2 != NULL)
+        delete form;
     return(0);
 }

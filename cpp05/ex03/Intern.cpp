@@ -19,6 +19,7 @@ Intern::Intern()
 
 Intern::Intern(const Intern& temp)
 {
+    (void)temp;
     std::cout << "Intern was copied" << std::endl;
 }
 
@@ -48,14 +49,18 @@ AForm *Intern::makePardon(std::string target)
 AForm *Intern::makeForm(std::string form, std::string target)
 {
     int index = 0;
-    std::string titles[3] = {"PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
-    AForm *(Intern::*members[4])(void) = {&Intern::makeForm, &Intern::makeRobotomy, &Intern::makePardon};
+    std::string titles[3] = {"ShrubberyCreationForm", "RobotomyRequestForm", "PresidentialPardonForm"};
+    AForm* (Intern::*members[3])(std::string) = {&Intern::makeShrubbery, &Intern::makeRobotomy, &Intern::makePardon};
     
-    while (index < 3 && title[index].compare(form))
+    while (index < 3)
+    {
+        if (!titles[index].compare(form))
+            break ;
         index++;
+    }
 
-    if (!index < 3)
-        throw Intern::FormNotFound ();
+    if (index == 3)
+        throw Intern::FormNotFound();
 
     AForm *obj = (this->*members[index])(target);
     std::cout << "Intern creates " << form << std::endl;
@@ -64,6 +69,7 @@ AForm *Intern::makeForm(std::string form, std::string target)
 
 Intern &Intern::operator=(const Intern& temp)
 {
+    (void)temp;
     std::cout << "Intern has been assigned" << std::endl;
     return (*this);
 }
@@ -75,6 +81,7 @@ const char* Intern::FormNotFound::what() const throw()
 
 std::ostream&   operator<<( std::ostream &out, const Intern &ref)
 {
+    (void)ref;
     out << "Intern.";
     return (out);
 }
